@@ -23,8 +23,9 @@ jobs:
     - name: Build development environment
       run: |
         nix-build
+        
+    - name: Render
+      run: nix-shell --run "python -c 'print(\"HHH\")'"
 
-    - name: Convert Notebook to PDF
-      run: |
-        python -c 'print("HHH")'
+        
 
