@@ -10,12 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set up Nix
-      uses: cachix/install-nix-action@v13
-    - name: Set up Python environment with Nix
+    - name: Install Nix
+      uses: DeterminateSystems/nix-installer-action@main
+      with:
+        logger: pretty
+        log-directives: nix_installer=trace
+        backtrace: full
+
+    - name: Nix cache
+      uses: DeterminateSystems/magic-nix-cache-action@main
+
+    - name: Build development environment
       run: |
-        nix-shell -p python38Packages.pip
-        pip install nbconvert
+        nix-build
+
     - name: Convert Notebook to PDF
       run: |
         python -c 'print("HHH")'
