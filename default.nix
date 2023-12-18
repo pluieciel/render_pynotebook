@@ -1,6 +1,13 @@
-with import <nixpkgs> {};
-python35.withPackages (ps: [
-  ps.numpy
-  ps.toolz
-  ps.jupyter
-])
+environment.systemPackages = [
+  python3
+];
+
+let
+  my-python-packages = ps: with ps; [
+    numpy
+    matplotlib
+  ];
+in
+environment.systemPackages = [
+  (pkgs.python3.withPackages my-python-packages)
+];
