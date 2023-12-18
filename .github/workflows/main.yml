@@ -28,7 +28,7 @@ jobs:
         nix-build
         
     - name: Render
-      run: nix-shell --run "jupyter nbconvert --to pdf RAPtest.ipynb"
+      run: nix-shell --run "jupyter nbconvert --to html RAPtest.ipynb"
 
         
 
