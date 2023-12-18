@@ -32,7 +32,7 @@ jobs:
 
     - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
       run: |
-        git config --global user.name "GA Bot"
+        git config --global user.name "pluieciel"
         git config --global user.email "github_actions@bot.noreply.com"
         git add .
         git commit -a -m "rendered file"
