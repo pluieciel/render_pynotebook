@@ -3,7 +3,7 @@ let
  pypkgs = builtins.attrValues {
   inherit (pkgs.python311Packages) numpy matplotlib jupyter nbconvert;
  };
- texlive = pkgs.texlive.combined.scheme-full;
+ texlive = pkgs.texlive.combined.scheme-small;
  pandoc = pkgs.pandoc;
 in
   pkgs.mkShell {
