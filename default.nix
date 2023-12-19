@@ -4,6 +4,7 @@ let
   inherit (pkgs.python311Packages) numpy matplotlib jupyter nbconvert;
  };
  texlive = pkgs.texlive.combined.scheme-full;
+ pandoc = pkgs.pandoc;
 in
   pkgs.mkShell {
     LOCALE_ARCHIVE = if pkgs.system == "x86_64-linux" then  "${pkgs.glibcLocalesUtf8}/lib/locale/locale-archive" else "";
@@ -14,5 +15,5 @@ in
     LC_PAPER = "en_US.UTF-8";
     LC_MEASUREMENT = "en_US.UTF-8";
 
-    buildInputs = [ pypkgs texlive ];
+    buildInputs = [ pypkgs texlive pandoc];
   }
