@@ -28,7 +28,7 @@ jobs:
         nix-build
         
     - name: Render
-      run: nix-shell -p pandoc texliveTeTeX jupyter --run "jupyter nbconvert --to pdf RAPtest.ipynb"
+      run: nix-shell --run "jupyter nbconvert --to pdf RAPtest.ipynb"
 
     - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
       run: |
