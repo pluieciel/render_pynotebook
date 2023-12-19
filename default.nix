@@ -13,5 +13,5 @@ in
     LC_PAPER = "en_US.UTF-8";
     LC_MEASUREMENT = "en_US.UTF-8";
 
-    buildInputs = [ pypkgs ];
+    buildInputs = [ pypkgs texlive.combined.scheme-full ];
   }
