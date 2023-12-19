@@ -2,8 +2,8 @@ let
  pkgs = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/976fa3369d722e76f37c77493d99829540d43845.tar.gz") {};
  pypkgs = builtins.attrValues {
   inherit (pkgs.python311Packages) numpy matplotlib jupyter nbconvert;
+ };
  texlive = pkgs.texlive.combined.scheme-full;
-};
 in
   pkgs.mkShell {
     LOCALE_ARCHIVE = if pkgs.system == "x86_64-linux" then  "${pkgs.glibcLocalesUtf8}/lib/locale/locale-archive" else "";
